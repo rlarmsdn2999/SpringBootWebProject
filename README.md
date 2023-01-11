@@ -20,3 +20,15 @@
 ##### 3.3.Thymeleaf의 기본 객체와 LocalDateTime
 ##### 3.4.Thymeleaf의 레이아웃
 
+## Part2.Spring MVC/JPA/Thymeleaf 연습
+### [04.프로젝트 구조 만들기(guestbook)](https://github.com/rlarmsdn2999/SpringBootWebProject/tree/master/guestbook)
+##### 4.1.프로젝트의 와이어프레임
+##### 4.2.자동으로 처리되는 날짜/시간 설정
+##### 4.3.엔티티 클래스와 Querydsl 설정
+##### 4.4.서비스 계층과 DTO
+##### 4.5.목록 처리
+##### 4.6.컨트롤러와 화면에서의 목록 처리
+##### 4.7.등록 페이지와 등록 처리
+##### 4.8.방명록의 조회 처리
+##### 4.9.방명록의 수정/삭제 처리
+##### 4.10.검색 처리
