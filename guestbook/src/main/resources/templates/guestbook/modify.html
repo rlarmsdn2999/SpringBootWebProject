@@ -5,6 +5,8 @@
         <h1 class="mt-4">GuestBook Modify Page</h1>
         <form action="/guestbook/modify" method="post">
             <input type="hidden" name="page" th:value="${requestDTO.page}">
+            <input type="hidden" name="type" th:value="${requestDTO.type}">
+            <input type="hidden" name="keyword" th:value="${requestDTO.keyword}">
             <div class="form-group">
                 <label>번호</label>
                 <input type="text" class="form-control" name="gno" th:value="${dto.gno}" readonly>
@@ -23,14 +25,12 @@
                 <input type="text" class="form-control" name="writer" th:value="${dto.writer}" readonly>
             </div>
             <div class="form-group">
-                <label>시간</label>
-                <input type="text" class="form-control" name="regDate"
-                       th:value="${#temporals.format(dto.regDate,'yyyy/MM/dd HH:mm:ss')}" readonly>
+                <label>작성시간</label>
+                <input type="text" class="form-control" th:value="${#temporals.format(dto.regDate,'yyyy/MM/dd')}" readonly>
             </div>
             <div class="form-group">
-                <label>수정 시간</label>
-                <input type="text" class="form-control" name="modDate"
-                       th:value="${#temporals.format(dto.modDate,'yyyy/MM/dd HH:mm:ss')}" readonly>
+                <label>수정시간</label>
+                <input type="text" class="form-control" th:value="${#temporals.format(dto.modDate,'yyyy/MM/dd')}" readonly>
             </div>
         </form>
         <button type="button" class="btn btn-primary modifyBtn">수정</button>
@@ -39,25 +39,29 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script th:inline="javascript">
             var actionForm = $("form");
-            $(".removeBtn").click(function(){
+            $(".removeBtn").click(function () {
                 actionForm
-                    .attr("action","/guestbook/remove")
-                    .attr("method","post");
+                    .attr("action", "/guestbook/remove")
+                    .attr("method", "post");
                 actionForm.submit();
             });
-            $(".modifyBtn").click(function(){
-                if(!confirm("수정하시겠습니까?")){
-                    return ;
+            $(".modifyBtn").click(function () {
+                if (!confirm("수정하시겠습니까?")) {
+                    return;
                 }
                 actionForm
-                    .attr("action","/guestbook/modify")
-                    .attr("method","post")
+                    .attr("action", "/guestbook/modify")
+                    .attr("method", "post")
                     .submit();
             });
-            $(".listBtn").click(function(){
-                var pageInfo = $("input[name='page']");
+            $(".listBtn").click(function () {
+                var page = $("input[name='page']");
+                var type = $("input[name='type']");
+                var keyword = $("input[name='keyword']");
                 actionForm.empty();
-                actionForm.append(pageInfo);
+                actionForm.append(page);
+                actionForm.append(type);
+                actionForm.append(keyword);
                 actionForm
                     .attr("action", "/guestbook/list")
                     .attr("method", "get");

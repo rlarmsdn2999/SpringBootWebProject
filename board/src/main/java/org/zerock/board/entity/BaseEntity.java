@@ -1,7 +1,6 @@
-package org.zerock.guestbook.entity;
+package org.zerock.board.entity;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -12,12 +11,11 @@ import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@EntityListeners(value={AuditingEntityListener.class})
+@EntityListeners(value = {AuditingEntityListener.class})
 @Getter
-@Setter
-abstract class BaseEntity {
+public class BaseEntity {
     @CreatedDate
-    @Column(name="regdate",updatable = false)
+    @Column(name="regdate", updatable = false)
     private LocalDateTime regDate;
 
     @LastModifiedDate
