@@ -34,7 +34,7 @@
 ##### 4.10.검색 처리
 
 ## Part3.N:1(다대일 관계) 처리하기
-### 05.N:1(다대일) 연관관계
+### [05.N:1(다대일) 연관관계(board)](https://github.com/rlarmsdn2999/SpringBootWebProject/tree/master/board)
 ##### 5.1.연관관계와 관계형 데이터베이스 설계
 ##### 5.2.연관관계 테스트
 ##### 5.3.프로젝트 적용하기
