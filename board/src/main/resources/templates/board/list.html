@@ -9,6 +9,28 @@
                 </a>
             </span>
         </h1>
+        <form action="/board/list" method="get" id="searchForm">
+            <div class="input-group">
+                <input type="hidden" name="page" value="1">
+                <div class="input-group-prepend">
+                    <select class="custom-select" name="type">
+                        <option th:selected="${pageRequestDTO.type == null}">--------------</option>
+                        <option value="t" th:selected="${pageRequestDTO.type == 't'}">제목</option>
+                        <option value="c" th:selected="${pageRequestDTO.type == 'c'}">내용</option>
+                        <option value="w" th:selected="${pageRequestDTO.type == 'w'}">작성자</option>
+                        <option value="tc" th:selected="${pageRequestDTO.type == 'tc'}">제목 + 내용</option>
+                        <option value="tw" th:selected="${pageRequestDTO.type == 'tw'}">제목 + 작성자</option>
+                        <option value="cw" th:selected="${pageRequestDTO.type == 'cw'}">내용 + 작성자</option>
+                        <option value="tcw" th:selected="${pageRequestDTO.type == 'tcw'}">제목 + 내용 + 작성자</option>
+                    </select>
+                </div>
+                <input class="form-control" name="keyword" th:value="${pageRequestDTO.keyword}">
+                <div class="input-group-append" id="button-addon4">
+                    <button class="btn btn-outline-secondary btn-search" type="button">Search</button>
+                    <button class="btn btn-outline-secondary btn-clear" type="button">Clear</button>
+                </div>
+            </div>
+        </form>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -25,7 +47,7 @@
                     keyword=${pageRequestDTO.keyword})}">[[${dto.bno}]]</a>
                 </th>
                 <td>[[${dto.title}]]-------[<b th:text="${dto.replyCount}"></b>] </td>
-                <td>[[${dto.writerName}]] <small>[[${dto.writerEmail}]]</small></td>
+                <td>[[${dto.writerEmail}]]</td>
                 <td>[[${#temporals.format(dto.regDate, 'yyyy/MM/dd')}]]</td>
             </tr>
             </tbody>
@@ -46,6 +68,17 @@
         , keyword = ${pageRequestDTO.keyword})}">다음</a>
             </li>
         </ul>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <script th:inline="javascript">
+            var searchForm = $("#searchForm");
+            $('.btn-search').click(function(e){
+                searchForm.submit();
+            });
+            $('.btn-clear').click(function(e){
+                searchForm.empty().submit();
+            });
+        </script>
     </th:block>
 </th:block>
 
