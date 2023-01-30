@@ -46,7 +46,7 @@
 ##### 6.2.ReplyDTO와 ReplyService/ReplyController
 ##### 6.3.조회 화면에서 처리
 
-## [Part4.M:N(다대다) 관계와 파일 업로드 처리 (mreview)]
+## [Part4.M:N(다대다) 관계와 파일 업로드 처리 (mreview)](https://github.com/rlarmsdn2999/SpringBootWebProject/tree/master/mreview)
 ### 07.M:N(다대다) 관게의 설계와 구현
 ##### 7.1.M:N(다대다) 관계의 특징
 ##### 7.2.예제 프로젝트 생성
