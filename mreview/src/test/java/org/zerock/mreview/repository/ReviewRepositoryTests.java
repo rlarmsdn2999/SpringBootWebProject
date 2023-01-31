@@ -18,7 +18,7 @@ public class ReviewRepositoryTests {
     @Test
     public void insertReview(){
         IntStream.rangeClosed(1,200).forEach(i -> {
-            Long mno = (long)(Math.random()*100)+1;
+            Long mno = (long)(Math.random()*5)+1;
             Long mid = ((long)(Math.random()*100)+1);
             Member member = Member.builder().mid(mid).build();
             Review review = Review.builder()
