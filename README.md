@@ -61,7 +61,7 @@
 ##### 9.3.조회 페이지와 영화 리뷰
 ##### 9.4.Ajax로 영화 리뷰 처리
 
-## Part5.Spring Security를 이용한 로그인 처리
+## [Part5.Spring Security를 이용한 로그인 처리](https://github.com/rlarmsdn2999/SpringBootWebProject/tree/master/club)
 ### 10.Spring Boot와 Spring Security연동
 ##### 10.1.스프링 시큐리티를 이용하는 프로젝트 생성
 ##### 10.2.스프링 시큐리티 커스터마이징
